@@ -1,9 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextFunction, Request, Response } from "express";
 
-const ai = new GoogleGenAI({
-	apiKey: "AIzaSyAnpO8xgsMV2MRVZIAe41B2qm35nv4PB8g",
-});
+const ai = new GoogleGenAI({});
 
 export const getHaiku = async (
 	req: Request,
