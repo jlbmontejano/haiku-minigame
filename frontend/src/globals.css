@@ -124,7 +124,7 @@
 
     body {
         @apply bg-background text-foreground;
-        font-family: "Lato", sans-serif;
+        font-family: "Inter", sans-serif;
     }
 }
 
@@ -140,5 +140,9 @@
     .haiku-text {
         @apply text-center text-2xl;
         font-family: "Playfair Display", serif;
+    }
+
+    .subtitle {
+        @apply text-xl font-semibold;
     }
 }
