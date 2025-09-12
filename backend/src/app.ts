@@ -1,8 +1,8 @@
+import cors from "cors";
 import express from "express";
 import { rateLimit } from "express-rate-limit";
 import errorHandler from "./middleware/errorHandler";
 import haikuRoutes from "./routes/haiku.route";
-import cors from "cors";
 
 const app = express();
 
@@ -13,8 +13,15 @@ const limiter = rateLimit({
 	legacyHeaders: false,
 });
 
+app.use(
+	cors({
+		origin: ["http://localhost:3000", "http://localhost:5173"], // Add your frontend URL
+		methods: ["GET", "POST", "PUT", "DELETE"],
+		allowedHeaders: ["Content-Type", "Authorization"],
+	})
+);
+
 app.use(express.json());
-app.use(cors());
 app.use(limiter);
 
 app.use("/api", haikuRoutes);
