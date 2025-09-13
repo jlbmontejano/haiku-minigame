@@ -18,7 +18,7 @@ const Welcome = () => {
                 <p>Haiku</p>
                 <p>Minigame</p>
             </div>
-            <p>
+            <p className="max-w-[600px]">
                 Welcome to a space shaped by the calm and simplicity of Japanese
                 poetry. Receive a random haiku with one line blank, write your
                 own sentence or choose one of the suggestions, then let AI
