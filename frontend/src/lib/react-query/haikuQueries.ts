@@ -6,12 +6,15 @@ export const useGetHaiku = () => {
     return useQuery({
         queryKey: [QUERY_KEYS.GET_HAIKU],
         queryFn: async () => {
-            const response = await fetch(import.meta.env.VITE_API_URL, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
+            const response = await fetch(
+                `${import.meta.env.VITE_API_URL}/api`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
                 },
-            });
+            );
 
             if (!response.ok) throw new Error("Failed to fetch haiku.");
 
@@ -33,13 +36,16 @@ export const useRateHaiku = () => {
             topic: string;
             userInput: string;
         }) => {
-            const response = await fetch(import.meta.env.VITE_API_URL, {
-                method: "POST",
-                body: JSON.stringify(reqBody),
-                headers: {
-                    "Content-Type": "application/json",
+            const response = await fetch(
+                `${import.meta.env.VITE_API_URL}/api`,
+                {
+                    method: "POST",
+                    body: JSON.stringify(reqBody),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
                 },
-            });
+            );
 
             if (!response.ok) {
                 throw new Error("Failed to rate haiku.");
