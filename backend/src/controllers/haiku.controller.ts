@@ -31,7 +31,7 @@ export const rateHaiku = async (
 
 	const response = await ai.models.generateContent({
 		model: "gemini-2.5-flash",
-		contents: `You are a haiku master. Here is an incomplete haiku you gave me on the topic of ${topic}: ${haiku}, which I decided to complete with this phrase ${userInput}. Rate how I did on a scale from 1 to 10 and give a one-sentence comment on how I could improve. Respond only with a JSON object containing a "rating" (number) and a "comment" (string) key.`,
+		contents: `You are a haiku master. Here is an incomplete haiku you gave me on the topic of ${topic}: ${haiku}, which I decided to complete with this phrase ${userInput}. Rate how I did on a scale from 1 to 10 and give a one-sentence comment on how I could improve. Respond only with a JSON object containing a "grade" (number) and a "comment" (string) key.`,
 	});
 
 	if (!response.text) {
