@@ -1,18 +1,21 @@
+import RefetchButton from "@/components/RefetchButton";
 import { Button } from "@/components/ui/button";
-import { useHaikuContext } from "@/context/haiku-context";
+import { useAppContext } from "@/context/app-context";
 
-const Options = () => {
-    const { userInput, isLoading, fetchHaiku, rateHaiku } = useHaikuContext();
+type OptionsProps = {
+    handleRateHaiku: () => Promise<void>;
+};
+
+const Options = ({ handleRateHaiku }: OptionsProps) => {
+    const { userInput } = useAppContext();
 
     return (
         <div className="flex items-center justify-center gap-2 lg:gap-6">
-            <Button onClick={() => fetchHaiku()} disabled={isLoading}>
-                Get a new haiku
-            </Button>
+            <RefetchButton />
             <Button
                 type="submit"
-                onClick={() => rateHaiku()}
-                disabled={isLoading || !userInput}
+                onClick={handleRateHaiku}
+                disabled={!userInput}
             >
                 Rate my haiku
             </Button>
