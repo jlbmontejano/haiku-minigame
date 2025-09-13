@@ -29,7 +29,6 @@ export const useGetHaiku = () => {
 };
 
 export const useRateHaiku = () => {
-    // const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (reqBody: {
             text: string[];
@@ -55,8 +54,5 @@ export const useRateHaiku = () => {
 
             return data;
         },
-        // onSuccess: () => {
-        //     queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.GET_HAIKU] });
-        // },
     });
 };

@@ -1,8 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/app-context";
+import QUERY_KEYS from "@/lib/react-query/queryKeys";
+import { useQueryClient } from "@tanstack/react-query";
 
 const Welcome = () => {
+    const queryClient = useQueryClient();
     const { handlePageChange } = useAppContext();
+
+    const handlePlay = () => {
+        queryClient.removeQueries({ queryKey: [QUERY_KEYS.GET_HAIKU] });
+        handlePageChange("minigame");
+    };
 
     return (
         <section className="width-control">
@@ -18,8 +26,8 @@ const Welcome = () => {
             </p>
             <p>Enjoy the quiet, one verse at a time.</p>
             <Button
-                onClick={() => handlePageChange("minigame")}
-                className="w-full max-w-[200px] self-center"
+                onClick={handlePlay}
+                className="w-full max-w-[200px] self-center sm:self-start"
             >
                 Play
             </Button>
