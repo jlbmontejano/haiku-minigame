@@ -12,7 +12,7 @@ const ModeToggle = () => {
     const { setTheme } = useTheme();
 
     return (
-        <div className="flex justify-end">
+        <div className="flex w-full justify-end">
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                     <Button variant="outline" size="icon">
