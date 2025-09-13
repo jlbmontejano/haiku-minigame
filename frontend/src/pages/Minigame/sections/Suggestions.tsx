@@ -20,11 +20,11 @@ const Suggestions = ({ suggestions, topic }: SuggestionsProps) => {
                 <span className="italic">{topic}</span>
             </p>
             <p>Stuck? Don't worry, here are a few suggestions:</p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 xl:flex-row">
                 {suggestions.map((suggestion) => (
                     <Button
                         onClick={() => handleSuggestionClick(suggestion)}
-                        className="md:w-1/3"
+                        className="w-full max-w-[80%] self-center xl:w-1/3"
                         variant={
                             userInput === suggestion ? "default" : "outline"
                         }

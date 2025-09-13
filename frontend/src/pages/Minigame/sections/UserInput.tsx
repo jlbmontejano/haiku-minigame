@@ -17,7 +17,7 @@ const UserInput = ({ handleRateHaiku }: UserInputProps) => {
     };
 
     return (
-        <div>
+        <div className="w-full max-w-[80%] self-center xl:max-w-[100%]">
             <Input
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}

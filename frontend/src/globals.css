@@ -134,7 +134,7 @@
     }
 
     .width-control {
-        @apply flex w-full grow flex-col justify-center gap-8 self-center lg:max-w-2/3;
+        @apply flex w-full grow flex-col justify-center gap-8 self-center sm:max-w-2/3;
     }
 
     .haiku-text {
