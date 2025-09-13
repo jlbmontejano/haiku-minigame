@@ -1,15 +1,15 @@
 const Footer = () => {
     return (
-        <div className="flex justify-between text-sm lg:text-base">
+        <footer className="flex justify-between text-sm lg:text-base">
             <p>Created by Jorge Buenrostro</p>
             <a
                 href="mailto:jlbmontejano@gmail.com"
-                target="_blank"
                 rel="noreferrer"
+                className="hover:text-sage-green transition-all hover:underline"
             >
                 Contact Me
             </a>
-        </div>
+        </footer>
     );
 };
 
