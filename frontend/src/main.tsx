@@ -3,7 +3,7 @@ import { AppProvider } from "@/context/app-context";
 import { ThemeProvider } from "@/context/theme-provider.tsx";
 import "@/globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 import { createRoot } from "react-dom/client";
 
 const queryClient = new QueryClient();
