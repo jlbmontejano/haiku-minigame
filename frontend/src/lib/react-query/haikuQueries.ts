@@ -1,5 +1,5 @@
 import type { Haiku, Rating } from "@/types";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import QUERY_KEYS from "./queryKeys";
 
 export const useGetHaiku = () => {
@@ -29,7 +29,7 @@ export const useGetHaiku = () => {
 };
 
 export const useRateHaiku = () => {
-    const queryClient = useQueryClient();
+    // const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (reqBody: {
             text: string[];
@@ -55,8 +55,8 @@ export const useRateHaiku = () => {
 
             return data;
         },
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.GET_HAIKU] });
-        },
+        // onSuccess: () => {
+        //     queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.GET_HAIKU] });
+        // },
     });
 };
