@@ -1,34 +1,31 @@
 import { Input } from "@/components/ui/input";
-import { useHaikuContext } from "@/context/haiku-context";
+import { useAppContext } from "@/context/app-context";
+import { useMissingLine } from "@/hooks/useMissingLine";
 
-const UserInput = () => {
-    const { haiku, userInput, setUserInput, rateHaiku } = useHaikuContext();
+type UserInputProps = {
+    handleRateHaiku: () => void;
+};
 
-    const handleUpdateEntry = (e: React.ChangeEvent<HTMLInputElement>) => {
-        e.preventDefault();
+const UserInput = ({ handleRateHaiku }: UserInputProps) => {
+    const { userInput, setUserInput } = useAppContext();
+    const { syllables } = useMissingLine();
 
-        setUserInput(e.target.value);
-    };
-
-    const handleSubmit = async () => {
-        await rateHaiku();
+    const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter" && userInput.trim()) {
+            handleRateHaiku();
+        }
     };
 
     return (
         <div>
-            <form onSubmit={handleSubmit}></form>
             <Input
                 value={userInput}
-                onChange={handleUpdateEntry}
-                onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                        handleSubmit();
-                    }
-                }}
+                onChange={(e) => setUserInput(e.target.value)}
+                onKeyDown={handleKeyDown}
                 placeholder="Write here"
             />
             <p className="pt-1 text-[11px] text-gray-400">
-                Your sentence should have {haiku?.missingLine === 1 ? "7" : "5"}{" "}
+                Your sentence should have {syllables}
                 syllables
             </p>
         </div>
