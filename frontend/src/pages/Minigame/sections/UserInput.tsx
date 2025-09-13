@@ -25,8 +25,7 @@ const UserInput = ({ handleRateHaiku }: UserInputProps) => {
                 placeholder="Write here"
             />
             <p className="pt-1 text-[11px] text-gray-400">
-                Your sentence should have {syllables}
-                syllables
+                Your sentence should have {syllables} syllables
             </p>
         </div>
     );
