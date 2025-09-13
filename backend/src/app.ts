@@ -15,7 +15,7 @@ const limiter = rateLimit({
 
 app.use(
 	cors({
-		origin: ["http://localhost:3000", "http://localhost:5173"], // Add your frontend URL
+		origin: process.env.FRONTEND_URL,
 		methods: ["GET", "POST", "PUT", "DELETE"],
 		allowedHeaders: ["Content-Type", "Authorization"],
 	})
