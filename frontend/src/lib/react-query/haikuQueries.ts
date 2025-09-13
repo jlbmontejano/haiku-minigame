@@ -13,6 +13,8 @@ export const useGetHaiku = () => {
                 },
             });
 
+            if (!response.ok) throw new Error("Failed to fetch haiku.");
+
             const data: Haiku = await response.json();
 
             return data;
@@ -40,13 +42,10 @@ export const useRateHaiku = () => {
             });
 
             if (!response.ok) {
-                console.log("Error in response");
-                throw new Error("Error in response");
+                throw new Error("Failed to rate haiku.");
             }
 
             const data: Rating = await response.json();
-
-            console.log(data);
 
             return data;
         },
