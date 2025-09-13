@@ -1,6 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/app-context";
 import { useGetHaiku } from "@/lib/react-query/haikuQueries";
-import { Button } from "./ui/button";
 
 const RefetchButton = () => {
     const { resetGameState } = useAppContext();

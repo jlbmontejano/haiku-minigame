@@ -1,9 +1,9 @@
 import App from "@/App.tsx";
+import { AppProvider } from "@/context/app-context";
 import { ThemeProvider } from "@/context/theme-provider.tsx";
+import "@/globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRoot } from "react-dom/client";
-import { AppProvider } from "./context/app-context";
-import "./globals.css";
 
 const queryClient = new QueryClient();
 

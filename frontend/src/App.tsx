@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { Toaster } from "@/components/ui/sonner";
-import Header from "./components/Header";
-import { usePageRouter } from "./hooks/usePageRouter";
+import { usePageRouter } from "@/hooks/usePageRouter";
 
 function App() {
     const getCurrentPage = usePageRouter();

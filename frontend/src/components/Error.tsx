@@ -1,6 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { useAppContext } from "@/context/app-context";
 import { BiSolidError } from "react-icons/bi";
-import { Button } from "./ui/button";
 
 const Error = () => {
     const { handlePageChange } = useAppContext();
