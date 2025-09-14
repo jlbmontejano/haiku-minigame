@@ -11,20 +11,20 @@ const UserInput = ({ handleRateHaiku }: UserInputProps) => {
     const { syllables } = useMissingLine();
 
     const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === "Enter" && userInput.trim()) {
+        if (e.key === "Enter") {
             handleRateHaiku();
         }
     };
 
     return (
-        <div className="w-full max-w-[80%] self-center xl:max-w-[100%]">
+        <div className="flex w-full max-w-[80%] flex-col gap-1 self-center xl:max-w-[100%]">
             <Input
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Write here"
             />
-            <p className="pt-1 text-[11px] text-gray-400">
+            <p className="text-[11px] text-gray-400">
                 Your sentence should have {syllables} syllables
             </p>
         </div>
