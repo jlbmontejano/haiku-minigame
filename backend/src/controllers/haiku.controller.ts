@@ -1,5 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextFunction, Request, Response } from "express";
+import RateHaikuSchema from "../utils/RateHaikuSchema";
 
 const ai = new GoogleGenAI({});
 
@@ -27,6 +28,13 @@ export const rateHaiku = async (
 	res: Response,
 	next: NextFunction
 ) => {
+	const validation = RateHaikuSchema.safeParse(req.body);
+
+	if (!validation.success) {
+		console.log(validation.error);
+		throw new Error("Error validating data");
+	}
+
 	const { haiku, topic, userInput } = req.body;
 
 	const response = await ai.models.generateContent({
