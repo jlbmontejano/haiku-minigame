@@ -130,7 +130,7 @@
 
 @layer components {
     .main-container {
-        @apply flex min-h-screen w-full flex-col gap-8 px-4 py-2;
+        @apply flex min-h-screen w-full flex-col gap-8 px-4 py-2 lg:py-4;
     }
 
     .width-control {
