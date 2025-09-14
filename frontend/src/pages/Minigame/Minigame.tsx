@@ -31,7 +31,7 @@ const Minigame = () => {
                 </>
             ) : (
                 <>
-                    <UserInput handleRateHaiku={() => handleRateHaiku} />
+                    <UserInput handleRateHaiku={() => handleRateHaiku(haiku)} />
                     <Suggestions topic={topic} suggestions={suggestions} />
                     <Options handleRateHaiku={() => handleRateHaiku(haiku)} />
                 </>
