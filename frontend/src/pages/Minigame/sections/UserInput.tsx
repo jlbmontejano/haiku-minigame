@@ -17,7 +17,7 @@ const UserInput = ({ handleRateHaiku }: UserInputProps) => {
     };
 
     return (
-        <div className="flex w-full max-w-lg flex-col gap-1 self-center">
+        <section className="flex w-full max-w-lg flex-col gap-1 self-center">
             <Input
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
@@ -27,7 +27,7 @@ const UserInput = ({ handleRateHaiku }: UserInputProps) => {
             <p className="text-[11px] text-gray-400">
                 Your sentence should have {syllables} syllables
             </p>
-        </div>
+        </section>
     );
 };
 

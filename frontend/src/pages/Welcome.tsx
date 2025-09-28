@@ -14,11 +14,11 @@ const Welcome = () => {
 
     return (
         <section className="width-control">
-            <div className="text-sage-green text-5xl font-semibold">
-                <p>Haiku</p>
-                <p>Minigame</p>
-            </div>
-            <p className="max-w-[600px]">
+            <h1 className="text-sage-green text-5xl font-semibold">
+                <span>Haiku</span> <br />
+                <span>Minigame</span>
+            </h1>
+            <p className="max-w-xl">
                 Welcome to a space shaped by the calm and simplicity of Japanese
                 poetry. Receive a random haiku with one line blank, write your
                 own sentence or choose one of the suggestions, then let AI

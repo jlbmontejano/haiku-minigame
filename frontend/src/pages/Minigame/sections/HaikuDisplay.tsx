@@ -22,9 +22,9 @@ const HaikuDisplay = ({ wholeText }: HaikuDisplayProps) => {
     };
 
     return (
-        <div className="haiku-text">
+        <section className="haiku-text">
             {wholeText.map((text, idx) => formatLine(text, idx))}
-        </div>
+        </section>
     );
 };
 

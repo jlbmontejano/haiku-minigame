@@ -10,7 +10,7 @@ const Options = ({ handleRateHaiku }: OptionsProps) => {
     const { userInput } = useAppContext();
 
     return (
-        <div className="flex items-center justify-center gap-2 lg:gap-6">
+        <section className="flex items-center justify-center gap-2 lg:gap-6">
             <RefetchButton />
             <Button
                 type="submit"
@@ -19,7 +19,7 @@ const Options = ({ handleRateHaiku }: OptionsProps) => {
             >
                 Rate my haiku
             </Button>
-        </div>
+        </section>
     );
 };
 

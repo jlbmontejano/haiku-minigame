@@ -6,10 +6,10 @@ type LoaderProps = {
 
 const Loader = ({ text = "Loading..." }: LoaderProps) => {
     return (
-        <div className="width-control items-center" aria-label={text}>
+        <section className="width-control items-center" aria-label={text}>
             <BounceLoader size="6rem" color="#828B81" />
-            <p className="subtitle">{text}</p>
-        </div>
+            <h1 className="subtitle">{text}</h1>
+        </section>
     );
 };
 

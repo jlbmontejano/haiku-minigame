@@ -12,7 +12,6 @@ export const useHaikuRating = () => {
 
     const validateInput = () => {
         const validation = UserInputSchema.safeParse(userInput);
-        console.log(validation.success);
         setIsInputValid(validation.success);
     };
 

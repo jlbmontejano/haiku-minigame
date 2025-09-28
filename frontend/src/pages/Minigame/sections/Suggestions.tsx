@@ -14,7 +14,7 @@ const Suggestions = ({ suggestions, topic }: SuggestionsProps) => {
     };
 
     return (
-        <div className="flex flex-col gap-2 text-center text-sm">
+        <section className="flex flex-col gap-2 text-center text-sm">
             <p className="pb-4">
                 <span className="font-semibold">Topic: </span>
                 <span className="italic">{topic}</span>
@@ -24,7 +24,7 @@ const Suggestions = ({ suggestions, topic }: SuggestionsProps) => {
                 {suggestions.map((suggestion) => (
                     <Button
                         onClick={() => handleSuggestionClick(suggestion)}
-                        className="w-full max-w-[80%] self-center xl:w-1/3"
+                        className="w-full max-w-lg self-center xl:w-1/3"
                         variant={
                             userInput === suggestion ? "default" : "outline"
                         }
@@ -35,7 +35,7 @@ const Suggestions = ({ suggestions, topic }: SuggestionsProps) => {
                     </Button>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

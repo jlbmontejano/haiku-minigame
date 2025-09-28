@@ -12,13 +12,13 @@ const RatingDisplay = () => {
     }
 
     return (
-        <div className="flex flex-col gap-4 text-center">
+        <section className="flex flex-col gap-4 text-center">
             <p className="text-4xl font-semibold">{rating.grade}/10</p>
-            <p className="text-sm">
+            <p>
                 <span className="font-semibold">AI comment: </span>
                 {rating.comment}
             </p>
-        </div>
+        </section>
     );
 };
 
